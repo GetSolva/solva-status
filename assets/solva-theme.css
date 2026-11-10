@@ -112,3 +112,16 @@ article.up:not(.graph)::after {
 .r input:checked + label { color: #222222; font-weight: 500; }
 
 footer, footer p { color: var(--text-tertiary); font-size: 12px; }
+
+/* Phone width: Upptime pads 2rem and keeps the nav links on one wide line, which overflows 390px. */
+nav a { padding: 1.25rem 1rem !important; font-weight: 500; }
+@media (max-width: 640px) {
+  .container { padding: 0 16px !important; }
+  nav { padding: 0 !important; margin-bottom: 1.25rem !important; }
+  nav .logo { margin-right: 0 !important; }
+  nav .logo img { margin-right: 8px !important; }
+  nav a { padding: 1rem 0.5rem !important; }
+  h1 { font-size: 20px; }
+  .f { gap: 8px; }
+  .r label { margin-left: 0.5rem !important; }
+}
