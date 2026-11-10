@@ -1,31 +1,101 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: GetSolva
+repo: solva-status
+
+# Technical addresses stay in repository secrets: the public page shows the service, not its host.
+secrets:
+  - DASHBOARD_API_HEALTH_URL
+  - BRIDGE_HEALTH_URL
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Site getsolva.fr
+    url: https://getsolva.fr
+  - name: Tableau de bord (connexion)
+    url: https://app.getsolva.fr/sign-in
+  # Serves the dashboard, the WhatsApp and widget agents and the reminders.
+  - name: Serveur Solva (WhatsApp, widget, rappels)
+    url: $DASHBOARD_API_HEALTH_URL
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Synchronisation agenda Doctolib
+    url: $BRIDGE_HEALTH_URL
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Espace patient
+    url: https://patient.getsolva.fr
+  - name: Questionnaire d'installation
+    url: https://onboarding.getsolva.fr
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.getsolva.fr
+  logoUrl: https://getsolva.fr/favicon.svg
+  name: Statut Solva
+  introTitle: "État des services **Solva** en direct"
+  introMessage: Chaque service est testé automatiquement toutes les 5 minutes. En cas de panne, l'équipe Solva publie ici ce qui se passe et quand c'est réglé.
   navbar:
-    - title: Status
+    - title: Statut
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: getsolva.fr
+      href: https://getsolva.fr
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+skipDescriptionUpdate: true
+
+i18n:
+  activeIncidents: Incidents en cours
+  allSystemsOperational: Tous les services fonctionnent
+  incidentReport: "Rapport de l'incident n° $NUMBER →"
+  activeIncidentSummary: Ouvert le $DATE, $POSTS messages
+  incidentTitle: Incident n° $NUMBER
+  incidentDetails: Détails de l'incident
+  incidentFixed: Résolu
+  incidentOngoing: En cours
+  incidentOpenedAt: Ouvert le
+  incidentClosedAt: Fermé le
+  incidentViewOnGitHub: Voir sur GitHub
+  incidentCommentSummary: Publié le $DATE par $AUTHOR
+  incidentBack: ← Retour aux incidents
+  pastIncidents: Incidents passés
+  pastIncidentsResolved: Résolu en $MINUTES minutes, $POSTS messages
+  liveStatus: Statut en direct
+  overallUptime: "Disponibilité : $UPTIME"
+  overallUptimeTitle: Disponibilité
+  averageResponseTime: "Temps de réponse moyen : $TIME ms"
+  averageResponseTimeTitle: Temps de réponse moyen
+  sevelDayResponseTime: Temps de réponse sur 7 jours
+  responseTimeMs: Temps de réponse (ms)
+  up: Opérationnel
+  down: En panne
+  degraded: Ralenti
+  ms: ms
+  loading: Chargement
+  navGitHub: GitHub
+  footer: Page de statut de Solva, propulsée par [Upptime](https://upptime.js.org)
+  rateLimitExceededTitle: Trop de visites
+  rateLimitExceededIntro: Cette page a été rechargée trop souvent depuis votre connexion. Réessayez dans une heure.
+  rateLimitExceededWhatDoesErrorMean: Que signifie ce message ?
+  rateLimitExceededErrorMeaning: La page lit ses données en direct sur GitHub, qui limite à 60 lectures par heure et par connexion.
+  rateLimitExceededErrorHowCanFix: Que faire ?
+  rateLimitExceededErrorFix: Attendez une heure, ou ajoutez un jeton GitHub personnel ci-dessous.
+  rateLimitExceededGeneratePAT: Créer un jeton GitHub personnel
+  rateLimitExceededHasSet: Un jeton personnel est enregistré.
+  rateLimitExceededRemoveToken: Retirer le jeton
+  rateLimitExceededGitHubPAT: Jeton GitHub personnel
+  rateLimitExceededCopyPastePAT: Collez votre jeton
+  rateLimitExceededSaveToken: Enregistrer le jeton
+  errorTitle: Une erreur est survenue
+  errorIntro: Impossible de charger l'état des services.
+  errorText: Réessayez dans quelques instants.
+  errorHome: Retour à l'accueil
+  pastScheduledMaintenance: Maintenances passées
+  scheduledMaintenance: Maintenance prévue
+  scheduledMaintenanceSummaryStarted: Commencée le $DATE pour $DURATION minutes
+  scheduledMaintenanceSummaryStarts: Commence le $DATE pour $DURATION minutes
+  startedAt: Commencée le
+  startsAt: Commence le
+  duration: Durée
+  durationMin: $DURATION minutes
+  incidentCompleted: Terminée
+  incidentScheduled: Prévue
+  duration24H: 24 h
+  duration7D: 7 j
+  duration30D: 30 j
+  duration1Y: 1 an
+  durationAll: tout
+  locale: fr-FR
