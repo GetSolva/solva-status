@@ -25,7 +25,10 @@ sites:
 
 status-website:
   cname: status.getsolva.fr
-  logoUrl: https://getsolva.fr/favicon.svg
+  logoUrl: https://app.getsolva.fr/favicon.svg
+  favicon: https://app.getsolva.fr/favicon-96x96.png
+  faviconSvg: https://app.getsolva.fr/favicon.svg
+  themeUrl: https://status.getsolva.fr/solva-theme.css
   name: Statut Solva
   introTitle: "État des services **Solva** en direct"
   introMessage: Chaque service est testé automatiquement toutes les 5 minutes. En cas de panne, l'équipe Solva publie ici ce qui se passe et quand c'est réglé.
@@ -36,6 +39,13 @@ status-website:
       href: https://getsolva.fr
 
 skipDescriptionUpdate: true
+
+# Plain-text history: no emoji in commit messages.
+commitMessages:
+  statusChange: "$SITE_NAME : $STATUS ($RESPONSE_CODE en $RESPONSE_TIME ms) [skip ci] [upptime]"
+  readmeContent: "Mise à jour du résumé [skip ci] [upptime]"
+  summaryJson: "Mise à jour des statuts [skip ci] [upptime]"
+  graphsUpdate: "Mise à jour des graphiques [skip ci] [upptime]"
 
 i18n:
   activeIncidents: Incidents en cours
