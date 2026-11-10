@@ -40,9 +40,13 @@ status-website:
 
 skipDescriptionUpdate: true
 
-# Plain-text history: no emoji in commit messages.
+# Plain-text history: Upptime reads each service status from the first word of its last commit,
+# so the emoji prefixes are replaced by single words rather than removed.
+commitPrefixStatusUp: OK
+commitPrefixStatusDown: PANNE
+commitPrefixStatusDegraded: RALENTI
 commitMessages:
-  statusChange: "$SITE_NAME : $STATUS ($RESPONSE_CODE en $RESPONSE_TIME ms) [skip ci] [upptime]"
+  statusChange: "$PREFIX $SITE_NAME : $STATUS ($RESPONSE_CODE en $RESPONSE_TIME ms) [skip ci] [upptime]"
   readmeContent: "Mise à jour du résumé [skip ci] [upptime]"
   summaryJson: "Mise à jour des statuts [skip ci] [upptime]"
   graphsUpdate: "Mise à jour des graphiques [skip ci] [upptime]"
