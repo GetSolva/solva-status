@@ -1,0 +1,114 @@
+/* Solva dashboard look (« Clinical Clean »): values copied from dashboard/frontend/src/app/globals.css.
+   Upptime ships Roboto, emoji markers and coloured graphs; this file brings the page back to the
+   dashboard's neutrals, thin borders and status pills. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --body-background-color: #fafafa;
+  --body-text-color: #222222;
+  --card-background-color: #ffffff;
+  --card-border-color: #e5e5e5;
+  --nav-background-color: #ffffff;
+  --nav-border-bottom-color: #e5e5e5;
+  --nav-current-border-bottom-color: #222222;
+  --up-border-left-color: #e5e5e5;
+  --degraded-border-left-color: #e5e5e5;
+  --down-border-left-color: #e5e5e5;
+  --down-background-color: #ffeeee;
+  --tag-color: #ffffff;
+  --tag-up-background-color: #17833a;
+  --tag-down-background-color: #e5484d;
+  --tag-degraded-background-color: #c2410c;
+  --change-background-color: #e1f0ff;
+  --error-button-border-color: #333333;
+  --error-button-background-color: #333333;
+  --error-button-color: #ffffff;
+  --submit-button-border-color: #333333;
+  --submit-button-background-color: #333333;
+  --submit-button-color: #ffffff;
+  --graph-opacity: 1;
+  --graph-filter: none;
+  --success-bg: #e7f7ee;
+  --success-fg: #17833a;
+  --warning-bg: #ffedd5;
+  --warning-fg: #c2410c;
+  --danger-bg: #ffeeee;
+  --danger-fg: #e5484d;
+  --text-tertiary: #646465;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+h2 { font-size: 16px; font-weight: 600; }
+h3 { font-size: 13px; font-weight: 500; opacity: 1; color: var(--text-tertiary); }
+h4 { font-size: 14px; font-weight: 500; margin: 0 0 0.25rem; }
+p, .lead { color: #404040; }
+
+nav .logo img { height: 24px; width: 24px; }
+nav .logo div { font-weight: 600; font-size: 15px; }
+nav a { text-decoration: none; }
+
+/* Cards: thin border, 8px radius, no coloured stripe, no shadow. */
+article,
+article.up,
+article.down,
+article.degraded {
+  border: 1px solid var(--card-border-color) !important;
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #222222;
+}
+article.down-active { background: var(--danger-bg); }
+article + article { margin-top: 8px; }
+
+/* Upptime's response-time pictures use their own palette; the pill carries the status instead. */
+article.graph { background-image: none !important; }
+article .icon { display: none; }
+
+/* Status pill after each service name (dashboard Badge: 12px, 4px radius, no border). */
+.live-status article h4 { display: flex; align-items: center; gap: 8px; }
+.live-status article h4::after {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+.live-status article.up h4::after { content: "Opérationnel"; background: var(--success-bg); color: var(--success-fg); }
+.live-status article.degraded h4::after { content: "Ralenti"; background: var(--warning-bg); color: var(--warning-fg); }
+.live-status article.down h4::after { content: "En panne"; background: var(--danger-bg); color: var(--danger-fg); }
+.live-status article > div { color: var(--text-tertiary); font-size: 13px; }
+.live-status .data { font-variant-numeric: tabular-nums; color: #404040; }
+
+/* The global banner hard-codes a check-mark emoji before its text: replace the whole line. */
+article.up:not(.graph) {
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card-background-color);
+}
+article.up:not(.graph)::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--success-fg);
+}
+article.up:not(.graph)::after {
+  content: "Tous les services fonctionnent";
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Tags (incidents) follow the Badge shape. */
+.tag { border-radius: 4px; font-size: 12px; font-weight: 500; padding: 2px 6px; }
+
+.r label { font-size: 13px; color: var(--text-tertiary); }
+.r input:checked + label { color: #222222; font-weight: 500; }
+
+footer, footer p { color: var(--text-tertiary); font-size: 12px; }
