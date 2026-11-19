@@ -1,7 +1,7 @@
 url: $DASHBOARD_API_HEALTH_URL
 status: up
 code: 200
-responseTime: 145
-lastUpdated: 2026-11-18T03:55:38.728Z
+responseTime: 140
+lastUpdated: 2026-11-19T03:53:41.247Z
 startTime: 2026-11-10T02:44:58.662Z
 generator: Upptime <https://github.com/upptime/upptime>
