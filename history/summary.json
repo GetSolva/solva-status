@@ -1,6 +1,6 @@
 [
   {
-    "name": "Solva website",
+    "name": "Site getsolva.fr",
     "url": "https://getsolva.fr",
     "icon": "https://icons.duckduckgo.com/ip3/getsolva.fr.ico",
     "slug": "site-getsolva-fr",
@@ -18,7 +18,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Dashboard sign-in",
+    "name": "Tableau de bord (connexion)",
     "url": "https://app.getsolva.fr/sign-in",
     "icon": "https://icons.duckduckgo.com/ip3/app.getsolva.fr.ico",
     "slug": "tableau-de-bord-connexion",
@@ -36,7 +36,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Solva server (WhatsApp, widget, reminders)",
+    "name": "Serveur Solva (WhatsApp, widget, rappels)",
     "url": "$DASHBOARD_API_HEALTH_URL",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "serveur-solva-whats-app-widget-rappels",
@@ -54,7 +54,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Doctolib calendar sync",
+    "name": "Synchronisation agenda Doctolib",
     "url": "$BRIDGE_HEALTH_URL",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "synchronisation-agenda-doctolib",
@@ -72,7 +72,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Patient portal",
+    "name": "Espace patient",
     "url": "https://patient.getsolva.fr",
     "icon": "https://icons.duckduckgo.com/ip3/patient.getsolva.fr.ico",
     "slug": "espace-patient",
@@ -90,7 +90,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Onboarding questionnaire",
+    "name": "Questionnaire d'installation",
     "url": "https://onboarding.getsolva.fr",
     "icon": "https://icons.duckduckgo.com/ip3/onboarding.getsolva.fr.ico",
     "slug": "questionnaire-d-installation",
