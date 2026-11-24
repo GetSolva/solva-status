@@ -78,9 +78,9 @@ article .icon { display: none; }
   border-radius: 4px;
   margin-left: auto;
 }
-.live-status article.up h4::after { content: "Opérationnel"; background: var(--success-bg); color: var(--success-fg); }
-.live-status article.degraded h4::after { content: "Ralenti"; background: var(--warning-bg); color: var(--warning-fg); }
-.live-status article.down h4::after { content: "En panne"; background: var(--danger-bg); color: var(--danger-fg); }
+.live-status article.up h4::after { content: "Operational"; background: var(--success-bg); color: var(--success-fg); }
+.live-status article.degraded h4::after { content: "Degraded"; background: var(--warning-bg); color: var(--warning-fg); }
+.live-status article.down h4::after { content: "Down"; background: var(--danger-bg); color: var(--danger-fg); }
 .live-status article > div { color: var(--text-tertiary); font-size: 13px; }
 .live-status .data { font-variant-numeric: tabular-nums; color: #404040; }
 
@@ -100,7 +100,7 @@ article.up:not(.graph)::before {
   background: var(--success-fg);
 }
 article.up:not(.graph)::after {
-  content: "Tous les services fonctionnent";
+  content: "All systems operational";
   font-size: 14px;
   font-weight: 500;
 }
