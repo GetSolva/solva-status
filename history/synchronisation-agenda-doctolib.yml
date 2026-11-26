@@ -1,7 +1,7 @@
 url: $BRIDGE_HEALTH_URL
 status: up
 code: 200
-responseTime: 206
-lastUpdated: 2026-11-25T05:07:50.331Z
+responseTime: 267
+lastUpdated: 2026-11-26T04:33:45.346Z
 startTime: 2026-11-10T02:44:59.073Z
 generator: Upptime <https://github.com/upptime/upptime>
